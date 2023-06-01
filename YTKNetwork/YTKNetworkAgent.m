@@ -133,7 +133,8 @@
     if (baseUrl.length > 0 && ![baseUrl hasSuffix:@"/"]) {
         url = [url URLByAppendingPathComponent:@""];
     }
-
+    NSString *aburlStr =[NSString stringWithFormat:@"%@%@",baseUrl,detailUrl];
+    return aburlStr;
     return [NSURL URLWithString:detailUrl relativeToURL:url].absoluteString;
 }
 
